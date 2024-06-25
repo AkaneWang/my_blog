@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { SideNav } from "@/components/Sidenav";
 
 const gothic = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
           gothic.className
         )}
       >
+        <SideNav />
         {children}
       </body>
     </html>
