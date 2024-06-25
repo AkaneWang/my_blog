@@ -3,8 +3,6 @@ import { Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-import { Home } from "lucide-react";
-
 const gothic = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
   variable: "--font-sans",
