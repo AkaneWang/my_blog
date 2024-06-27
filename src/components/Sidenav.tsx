@@ -2,7 +2,10 @@ import Link from "next/link";
 
 export const SideNav = () => {
   return (
-    <div id="sideNav" className="fixed bg-sky-100 h-full w-[20rem]">
+    <div
+      id="sideNav"
+      className="hidden md:block fixed bg-sky-100 h-full w-[20rem] "
+    >
       <div className="text-4xl text-sky-950 flex justify-center my-10">
         my Blog
       </div>
