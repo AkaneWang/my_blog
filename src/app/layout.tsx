@@ -3,6 +3,7 @@ import { Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SideNav } from "@/components/Sidenav";
+import { BottomNav } from "@/components/BottomNav";
 
 const gothic = Zen_Kaku_Gothic_New({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
       >
         <SideNav />
         {children}
+        <BottomNav />
       </body>
     </html>
   );
