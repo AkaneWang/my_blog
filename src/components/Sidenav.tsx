@@ -1,5 +1,12 @@
 import Link from "next/link";
 
+const navs: NavProps[] = [
+  { href: "/", name: "Top" },
+  { href: "/about", name: "About" },
+  { href: "/feed", name: "Feed" },
+  { href: "/contact", name: "Contact" },
+];
+
 export const SideNav = () => {
   return (
     <div
@@ -10,21 +17,23 @@ export const SideNav = () => {
         my Blog
       </div>
       <div className="text-xl text-sky-700 flex h-full flex-col items-center gap-4 my-40">
-        <Link href="/" className="hover:text-slate-950">
-          Top
-        </Link>
-
-        <Link href="/about" className="hover:text-slate-950">
-          About
-        </Link>
-
-        <Link href="/feed" className="hover:text-slate-950">
-          Feed
-        </Link>
-        <Link href="/contact" className="hover:text-slate-950">
-          Contact
-        </Link>
+        {navs.map(({ href, name }) => (
+          <Nav href={href} name={name} />
+        ))}
       </div>
     </div>
+  );
+};
+
+interface NavProps {
+  href: string;
+  name: string;
+}
+
+const Nav = ({ href, name }: NavProps) => {
+  return (
+    <Link href={href} className="hover:text-slate-950">
+      {name}
+    </Link>
   );
 };
