@@ -18,7 +18,7 @@ export const SideNav = () => {
       </div>
       <div className="text-xl text-sky-700 flex h-full flex-col items-center gap-4 my-40">
         {navs.map(({ href, name }) => (
-          <Nav href={href} name={name} />
+          <Nav key={name} href={href} name={name} />
         ))}
       </div>
     </div>

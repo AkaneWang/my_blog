@@ -19,7 +19,7 @@ export const BottomNav = () => {
       className="fixed md:hidden bottom-0 bg-sky-100 w-full text-sky-700 text-lg flex justify-around py-2"
     >
       {navs.map(({ href, name }) => (
-        <Nav href={href} name={name} />
+        <Nav key={name} href={href} name={name} />
       ))}
     </div>
   );
