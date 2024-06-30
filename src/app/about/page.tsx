@@ -61,7 +61,7 @@ export default function About() {
           src="/aboutme.jpg"
           width={500}
           height={500}
-          alt="Profilo Photo"
+          alt="Profile Photo"
           className="absolute top-2 right-2 w-24 h-24 border-2 border-gray-300 rounded-full object-cover"
         />
         <h2 className="border-2 border-sky-100 rounded-lg bg-sky-100 box-content mt-1 mx-2 p-2 w-24 flex justify-center font-semibold">
@@ -69,15 +69,15 @@ export default function About() {
         </h2>
 
         <div className="flex flex-col gap-4 border-2 border-sky-10 rounded-lg p-4 mt-1 mx-2 text-md font-semibold">
-          {personalInfo.map(({ key, value }) => (
-            <div className="md:flex md:gap-2">
-              <p>{key + ":"}</p>
-              <p>{value}</p>
+          {personalInfo.map((info, index) => (
+            <div key={index}>
+              <p>{info.key}</p>
+              <p>{info.value}</p>
             </div>
           ))}
         </div>
 
-        <h2 className="border-2 border-sky-100 rounded-lg bg-sky-100 box-content mt-1 mx-2 p-2 w-24 flex justify-center  font-semibold">
+        <h2 className="border-2 border-sky-100 rounded-lg bg-sky-100 box-content mt-1 mx-2 p-2 w-24 flex justify-center font-semibold">
           学歴
         </h2>
         <div className="flex flex-col gap-4 border-2 border-sky-10 rounded-lg p-4 mt-1 mx-2 text-md font-semibold">
