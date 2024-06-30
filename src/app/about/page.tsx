@@ -81,11 +81,11 @@ export default function About() {
           学歴
         </h2>
         <div className="flex flex-col gap-4 border-2 border-sky-10 rounded-lg p-4 mt-1 mx-2 text-md font-semibold">
-          {educationHistory.map(({ period, institution }) => (
-            <>
+          {educationHistory.map(({ period, institution }, index) => (
+            <div key={index}>
               <p>{period}</p>
               <p>{institution}</p>
-            </>
+            </div>
           ))}
         </div>
 
@@ -94,7 +94,9 @@ export default function About() {
         </h2>
         <div className="flex flex-col gap-4 border-2 border-sky-10 rounded-lg p-4 mt-1 mx-2 text-md font-semibold">
           {qualificationsAndSkills.map((item, index) => (
-            <p key={index}>{item}</p>
+            <div key={index}>
+              <p>{item}</p>
+            </div>
           ))}
         </div>
 
