@@ -48,7 +48,6 @@ const qualificationsAndSkills = [
   "TOEIC 880点",
   "⽇本語能⼒試験JLPT N2",
   "普通⾃動⾞第⼀種運転免許（AT限定）",
-  "JavaScript",
 ];
 
 export default function About() {
