@@ -2,31 +2,31 @@ import Image from "next/image";
 
 const personalInfo = [
   {
-    key: "名前:",
+    key: "名前",
     value: "王茜（オウセン）",
   },
   {
-    key: "生年月日:",
+    key: "生年月日",
     value: "2000年07月24日",
   },
   {
-    key: "年齢:",
+    key: "年齢",
     value: "23歳",
   },
   {
-    key: "性別:",
+    key: "性別",
     value: "女",
   },
   {
-    key: "現住所:",
+    key: "現住所",
     value: "東京都新宿区高田馬場３丁目45−11",
   },
   {
-    key: "email:",
+    key: "email",
     value: "wangxi_pochi@akane.waseda.jp",
   },
   {
-    key: "電話番号:",
+    key: "電話番号",
     value: "080−6155−7980",
   },
 ];
@@ -53,8 +53,8 @@ const qualificationsAndSkills = [
 
 export default function About() {
   return (
-    <main className="md:ml-[20rem] mb-[10rem]">
-      <h1 className="text-sky-1000 w-full bg-sky-100 mt-2 p-2 flex justify-center font-semibold">
+    <main className="md:ml-[20rem] mb-[4rem]">
+      <h1 className="text-sky-1000 w-full bg-sky-100 mt-2 md:mt-0 p-2 flex justify-center font-semibold">
         履歴書
       </h1>
       <div className="relative border-2 rounded-lg mt-1 mx-2 p-4">
@@ -62,7 +62,7 @@ export default function About() {
           src="/aboutme.jpg"
           width={500}
           height={500}
-          alt="Profile Photo"
+          alt="Profilo Photo"
           className="absolute top-2 right-2 w-24 h-24 border-2 border-gray-300 rounded-full object-cover"
         />
         <h2 className="border-2 border-sky-100 rounded-lg bg-sky-100 box-content mt-1 mx-2 p-2 w-24 flex justify-center font-semibold">
@@ -71,10 +71,10 @@ export default function About() {
 
         <div className="flex flex-col gap-4 border-2 border-sky-10 rounded-lg p-4 mt-1 mx-2 text-md font-semibold">
           {personalInfo.map(({ key, value }) => (
-            <>
-              <p>{key}</p>
+            <div className="md:flex md:gap-2">
+              <p>{key + ":"}</p>
               <p>{value}</p>
-            </>
+            </div>
           ))}
         </div>
 
@@ -103,7 +103,10 @@ export default function About() {
           自己PR
         </h2>
         <p className="flex flex-col gap-4 border-2 border-sky-10 rounded-lg p-4 mt-1 mx-2 text-md font-semibold tracking-widest">
-          今早稲田大学大学院創造理工研究科修士1年生。専門は経営システム工学で、研究室で主にソフトウェア工学に関する内容を取り組んでいる。
+          大学時代で制御工学を勉強し、主にPLCやDSPなどハードウェアの原理と操作を学んだ。今早稲田大学大学院創造理工研究科修士1年生。専門は経営システム工学で、研究室で主にソフトウェア工学に関する内容を取り組んでいる。
+          <br />
+          将来はソフトウェアエンジニアとして働きたく、現在はウェブアプリケーション開発を学ぼうとNext.js/Django/AWS
+          で私の自己紹介サイトの制作(現時点では、クライアントサイドの実装のみ)に取り組んでいる。
         </p>
       </div>
     </main>
