@@ -7,7 +7,7 @@ interface NavProps {
 
 const navs: NavProps[] = [
   { href: "/", name: "Top" },
-  { href: "/about", name: "About" },
+  { href: "/profile", name: "Profile" },
   { href: "/feed", name: "Feed" },
   { href: "/contact", name: "Contact" },
 ];

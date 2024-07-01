@@ -50,7 +50,7 @@ const qualificationsAndSkills = [
   "普通⾃動⾞第⼀種運転免許（AT限定）",
 ];
 
-export default function About() {
+export default function Profile() {
   return (
     <main className="md:ml-[20rem] mb-[4rem]">
       <h1 className="text-sky-1000 w-full bg-sky-100 mt-2 md:mt-0 p-2 flex justify-center font-semibold">
@@ -70,7 +70,7 @@ export default function About() {
 
         <div className="flex flex-col gap-4 border-2 border-sky-10 rounded-lg p-4 mt-1 mx-2 text-md font-semibold">
           {personalInfo.map((info, index) => (
-            <div key={index}>
+            <div key={info.key}>
               <p>{info.key}</p>
               <p>{info.value}</p>
             </div>
@@ -81,10 +81,9 @@ export default function About() {
           学歴
         </h2>
         <div className="flex flex-col gap-4 border-2 border-sky-10 rounded-lg p-4 mt-1 mx-2 text-md font-semibold">
-          {educationHistory.map(({ period, institution }, index) => (
+          {qualificationsAndSkills.map((item, index) => (
             <div key={index}>
-              <p>{period}</p>
-              <p>{institution}</p>
+              <p>{item}</p>
             </div>
           ))}
         </div>
