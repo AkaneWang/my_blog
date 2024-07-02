@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface NavProps {
   href: string;
@@ -26,8 +28,12 @@ export const BottomNav = () => {
 };
 
 const Nav = ({ href, name }: NavProps) => {
+  const pathname = usePathname();
   return (
-    <Link href={href} className="hover:text-slate-950">
+    <Link
+      href={href}
+      className={`${pathname === href && "text-slate-950"} bg-slate-500`}
+    >
       {name}
     </Link>
   );
