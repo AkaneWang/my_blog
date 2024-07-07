@@ -1,8 +1,8 @@
 version: "3"
 services:
-  my_blog:
+  frontend:
     build:
-      context: ./
+      context: ./frontend
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
@@ -11,3 +11,32 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
+
+  backend:
+    container_name: backend
+    build: ./backend
+    command: /bin/sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend:/code
+    environment:
+      - DB_NAME=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=#kadfG834f+-sa
+      - DB_HOST=db
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=#kadfG834f+-sa
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
