@@ -32,7 +32,7 @@ const UserProfile = () => {
               </div>
               <div>
                 <label className="block font-semibold">専攻</label>
-                <p>创造理工学研究科　经营系统工学</p>
+                <p>创造理工学研究科　经营システム工学</p>
               </div>
               <div>
                 <label className="block font-semibold">性别</label>
